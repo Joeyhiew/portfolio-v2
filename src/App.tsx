@@ -1,12 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import AboutPage from "./pages/about";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/navbar";
+import ProjectPage from "./pages/projects";
+import { THEME } from "./constants";
+import ThemeWidget from "./components/theme";
+import "./App.css";
 
 function App() {
+  const [theme, setTheme] = useState(THEME.LIGHT);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <Router>
+        <ThemeWidget />
+
+        <Navbar />
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<AboutPage />} />
+            <Route path="/projects" element={<ProjectPage />} />
+          </Routes>
+        </main>
+      </Router>
+      {/* <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
@@ -18,7 +34,7 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+        <AboutPage /> */}
     </div>
   );
 }
