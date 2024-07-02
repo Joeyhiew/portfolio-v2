@@ -1,21 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AboutPage from "./pages/about";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/navbar";
 import ProjectPage from "./pages/projects";
 import { THEME } from "./constants";
+import { getUserTheme } from "./utils";
 import ThemeWidget from "./components/theme";
-import "./App.css";
+import styles from "./index.module.scss";
 
 function App() {
-  const [theme, setTheme] = useState(THEME.LIGHT);
-  return (
-    <div className="App">
-      <Router>
-        <ThemeWidget />
+  const userSystemTheme = getUserTheme();
 
+  return (
+    <div className={styles.App}>
+      <Router>
+        <ThemeWidget userTheme={userSystemTheme} />
         <Navbar />
-        <main className="main-content">
+        <main className={styles.mainContent}>
           <Routes>
             <Route path="/" element={<AboutPage />} />
             <Route path="/projects" element={<ProjectPage />} />

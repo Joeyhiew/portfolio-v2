@@ -14,16 +14,21 @@
   }
 }
 
+// .iconGroup.click {
+//   transform: translateY(1vw);
+//   transition: all 0.75s ease;
+// }
+
 .rope {
   position: absolute;
   width: 1vw;
-  right: 2vw;
+  right: 4vw;
   top: -2vw;
 }
 
-.sun {
+.icon {
   position: absolute;
-  right: 0.5vw;
+  right: 2.5vw;
   top: 4vw;
   height: 4vw;
 }

@@ -7063,6 +7063,11 @@ minimist@^1.2.0, minimist@^1.2.6:
   resolved "http://bnpm.byted.org/minipass/-/minipass-7.1.2.tgz#93a9626ce5e5e66bd4db86849e7515e92340a707"
   integrity sha512-qOOzS1cBTWYF4BH8fVePDBOO9iptMnGUEZwNc/cMWnTV2nVLZ7VoNWEPHkYczZA0pdoA7dl6e7FL659nX9S2aw==
 
+mixin@^0.2.0:
+  version "0.2.0"
+  resolved "http://bnpm.byted.org/mixin/-/mixin-0.2.0.tgz#fb9db3d31175badb0a199dd4aad66476147b7d93"
+  integrity sha512-rG26haL24UI5gZEwUYjI4F57cghVUYvRdiN/7DjlbRu5DuXmx2sfmLqidYtP7Aq6C3xGvirRS+/ZtUQEgcO+Xw==
+
 mkdirp@~0.5.1:
   version "0.5.6"
   resolved "http://bnpm.byted.org/mkdirp/-/mkdirp-0.5.6.tgz#7def03d2432dcae4ba1d611445c48396062255f6"

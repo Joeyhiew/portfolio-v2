@@ -1,0 +1,56 @@
+.container {
+  position: relative;
+}
+@media screen and (max-width: 768px) {
+  .gif {
+    position: absolute;
+    width: 10vw;
+    left: 8vw;
+    top: -10vh;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh;
+    margin-left: 19vw;
+    margin-top: 18vh;
+    width: 50%;
+    .header1 {
+      font-size: 7vh;
+    }
+    .header2 {
+      font-size: 4vh;
+    }
+    .header3 {
+      font-size: 2vh;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .gif {
+    position: absolute;
+    width: 10vw;
+    left: 8vw;
+    top: -10vh;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh;
+    margin-left: 19vw;
+    margin-top: 18vh;
+    width: 50%;
+    .header1 {
+      font-size: 7vh;
+    }
+    .header2 {
+      font-size: 4vh;
+    }
+    .header3 {
+      font-size: 2vh;
+    }
+  }
+}

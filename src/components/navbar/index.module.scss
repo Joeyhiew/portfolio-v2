@@ -1,3 +1,5 @@
+@import "../../color-themes.scss";
+
 @media screen and (max-width: 768px) {
   .header {
     margin-top: 4vw;
@@ -6,20 +8,33 @@
 
   .navMenuWrapper {
     position: relative;
-    // transition: all 1s;
   }
 
   .sideBar {
     position: absolute;
     height: 100vh;
     top: -4vw;
-    left: -8vw;
+    left: -100vw;
     display: flex;
     flex-direction: column;
-    transform: translateX(3vw);
     width: 60%;
     background-color: grey;
+    transition: all 0.5s ease;
     opacity: 0.9;
+  }
+
+  .sideBar.open {
+    left: -4vw;
+  }
+
+  .icon {
+    position: absolute;
+    top: 1vw;
+    left: -100vw;
+    transition: all 0.5s ease;
+  }
+  .icon.open {
+    left: 1vw;
   }
 
   .navList {
@@ -28,7 +43,6 @@
     flex-direction: column;
     gap: 8px;
     font-size: 3vw;
-    border-radius: 4px;
     padding: 12px;
     transition:
       visibility 0s,
@@ -39,14 +53,14 @@
     text-align: center;
     padding-top: 2vw;
     padding-bottom: 2vw;
-    border-radius: 2px;
+    border-radius: 4px;
     &:hover {
       background-color: black;
     }
   }
 
   .navItem > a {
-    color: white;
+    color: var(--text-primary);
     font-size: 2.5vw;
   }
 
@@ -60,7 +74,7 @@
 
 @media screen and (min-width: 768px) {
   .navItem > a {
-    color: white;
+    color: var(--text-primary);
     font-size: 1.5vw;
   }
 
@@ -80,7 +94,7 @@
     flex-direction: row;
     padding: 0px;
     gap: 36px;
-    color: white;
+    color: var(--text-primary);
   }
 
   .navItem {

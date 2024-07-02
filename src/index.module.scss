@@ -1,3 +1,5 @@
+@import "./color-themes.scss";
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -10,18 +12,12 @@
 }
 
 .App {
-  /* background-color: #1c1640; */
-  background: linear-gradient(135deg, #3f3669, #052147);
-
+  background: linear-gradient(135deg, var(--bg-main-1), var(--bg-main-2));
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
+  color: var(--text-primary);
 }
 
 @keyframes App-logo-spin {
