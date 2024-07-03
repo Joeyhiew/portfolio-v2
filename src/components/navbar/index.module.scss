@@ -1,5 +1,11 @@
 @import "../../color-themes.scss";
 
+.avatar {
+  height: 4vw;
+  width: 4vw;
+  margin-right: 12px;
+}
+
 @media screen and (max-width: 768px) {
   .header {
     margin-top: 4vw;
@@ -8,6 +14,8 @@
 
   .navMenuWrapper {
     position: relative;
+    z-index: 1;
+    width: fit-content;
   }
 
   .sideBar {
@@ -62,6 +70,7 @@
   .navItem > a {
     color: var(--text-primary);
     font-size: 2.5vw;
+    transition: 1000ms;
   }
 
   .gif {
@@ -73,9 +82,16 @@
 }
 
 @media screen and (min-width: 768px) {
+  .navMenuWrapper {
+    position: relative;
+    z-index: 1;
+    width: fit-content;
+  }
+
   .navItem > a {
     color: var(--text-primary);
     font-size: 1.5vw;
+    transition: 1000ms;
   }
 
   .header {

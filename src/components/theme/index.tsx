@@ -1,14 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Sun from "../../assets/sun.png";
 import Rope from "../../assets/string.png";
 import styles from "./index.module.scss";
 import Moon1 from "../../assets/moon3.png";
 import { THEME } from "../../constants";
-import { getUserTheme } from "../../utils";
 import cx from "classnames";
-// import Moon2 from "../../assets/moon2.png";
-// import Moon3 from "../../assets/moon3.png";
-// import Moon4 from "../../assets/moon4.png";
 
 type ThemeWidgetType = {
   userTheme: THEME;
@@ -28,32 +24,30 @@ const ThemeWidget = ({ userTheme }: ThemeWidgetType) => {
       document.documentElement.setAttribute("data-theme", "dark");
       setTheme(THEME.DARK);
     }
-
-    // const element = document.getElementById("icon-group");
-    // if (element) {
-    //   element.className = `${cx(styles.iconGroup, styles.click)}`;
-    //   void element?.offsetWidth;
-    // }
-    // void element?.offsetWidth;
-    // element?.classList?.remove("click");
-    // element?.classList?.add("click");
-    // void element?.offsetWidth;
-    // element?.classList?.remove("click");
-    console.log(e);
   };
 
   return (
     <div className={styles.wrapper}>
-      <div
-        className={styles.iconGroup}
-        onClick={(e) => handleChangeTheme(theme, e)}
-        id="icon-group"
-      >
-        <img className={styles.rope} src={Rope} />
-        <img
-          className={styles.icon}
-          src={theme === THEME.LIGHT ? Sun : Moon1}
-        />
+      <div>
+        <div style={{ position: "relative" }}>
+          <div className={styles.container}>
+            <div
+              className={cx(
+                styles.bgMode,
+                userTheme === THEME.DARK ? styles.light : styles.dark,
+                theme !== userTheme ? styles.active : ""
+              )}
+            ></div>
+          </div>
+        </div>
+        <div className={styles.iconGroup} id="icon-group">
+          <img className={styles.rope} src={Rope} />
+          <img
+            className={styles.icon}
+            onClick={(e) => handleChangeTheme(theme, e)}
+            src={theme === THEME.LIGHT ? Sun : Moon1}
+          />
+        </div>
       </div>
     </div>
   );

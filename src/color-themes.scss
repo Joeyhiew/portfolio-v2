@@ -1,56 +1,11 @@
-// :root {
-//   --bg-main-1: #d7d1f6, --bg-main-2: #486c9d, --text-primary: #000000;
-// }
-
-// [data-theme="dark"] {
-//   --bg-main-1: #3f3669, --bg-main-2: #052147, --text-primary: #ffffff;
-// }
-
-$colors: (
-  "bg-main-1": "#d7d1f6",
-  "bg-main-2": "#486c9d",
-  "text-primary": "#000000",
-  "text-negative": "#ffffff",
-);
-
-$colors-dark: (
-  "bg-main-1": "#3f3669",
-  "bg-main-2": "#052147",
-  "text-primary": "#ffffff",
-  "text-negative": "#000000",
-);
-
-$bg-main-1: var(--bg-main-1);
-$bg-main-2: var(--bg-main-2);
-$text-primary: var(--text-primary);
-
-body {
-  @each $color, $value in $colors {
-    --#{$color}: #{$value};
-  }
-}
-
-// @media (prefers-color-scheme: dark) {
-//   body {
-//     @each $color, $value in $colors-dark {
-//       --#{$color}: #{$value};
-//     }
-//   }
-// }
-
-// [data-theme="dark"] {
-//   body {
-//     @each $color, $value in $colors-dark {
-//       --#{$color}: #{$value};
-//     }
-//   }
-// }
-
 :root {
   body {
     --bg-main-1: #d7d1f6;
     --bg-main-2: #486c9d;
     --text-primary: #000000;
+    --text-negative: #ffffff;
+    --button-bg-primary: #816aad;
+    --button-bg-hover: #544079;
   }
 }
 
@@ -59,5 +14,8 @@ body {
     --bg-main-1: #3f3669;
     --bg-main-2: #052147;
     --text-primary: #ffffff;
+    --text-negative: #000000;
+    --button-bg-primary: #b799d1;
+    --button-bg-hover: #6a568f;
   }
 }

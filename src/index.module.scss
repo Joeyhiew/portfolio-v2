@@ -12,12 +12,30 @@
 }
 
 .App {
-  background: linear-gradient(135deg, var(--bg-main-1), var(--bg-main-2));
+  transition: 1000ms;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   font-size: calc(10px + 2vmin);
   color: var(--text-primary);
+  overflow: hidden;
+}
+
+.App.dark {
+  background: linear-gradient(135deg, #3f3669, #052147);
+}
+
+.App.light {
+  background: linear-gradient(135deg, #d7d1f6, #b8bbe4);
+}
+
+@keyframes mymove {
+  from {
+    background: linear-gradient(135deg, #d7d1f6, pink);
+  }
+  to {
+    background: linear-gradient(135deg, #3f3669, #052147);
+  }
 }
 
 @keyframes App-logo-spin {

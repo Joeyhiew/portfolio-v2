@@ -12,6 +12,7 @@ const AboutPage = () => {
           I'm a software developer from Singapore. I dabble in all things
           frontend. I like painting, hiking, and sleeping
         </div>
+        <button className={styles.button}>Let's connect</button>
       </div>
     </div>
   );

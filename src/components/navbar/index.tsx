@@ -18,7 +18,7 @@ const Navbar = () => {
 
   const renderPCNavlink = () => (
     <div className={styles.navMenuWrapper}>
-      <Avatar src={Profile} />
+      <Avatar src={Profile} className={styles.avatar} />
       <ul className={styles.navList}>
         <li className={styles.navItem}>
           <NavLink to="/" className="nav-link">
@@ -36,9 +36,7 @@ const Navbar = () => {
 
   const renderMobileNavLinks = () => (
     <div className={styles.navMenuWrapper} id="nav-menu">
-      <div onClick={() => handleMenuToggle()}>
-        <IoMenu />
-      </div>
+      <IoMenu onClick={() => handleMenuToggle()} />
       <div className={cx(styles.sideBar, isMenuOpen ? styles.open : "")}>
         <IoClose
           onClick={() => handleMenuToggle()}
