@@ -11,10 +11,10 @@
   transition: all 0.75s ease;
 }
 
-// .iconGroup.click {
-//   transform: translateY(1vw);
-//   transition: all 0.75s ease;
-// }
+.click {
+  transform: translateY(1vw);
+  transition: all 0.75s ease;
+}
 
 .rope {
   position: absolute;
@@ -31,6 +31,9 @@
   transition: all 0.75s ease;
   &:hover {
     transform: translateY(2vw);
+  }
+  &:active {
+    transform: translateY(4vw);
   }
 }
 

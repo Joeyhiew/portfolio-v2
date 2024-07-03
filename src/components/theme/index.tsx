@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Sun from "../../assets/sun.png";
 import Rope from "../../assets/string.png";
+import LightRope from "../../assets/dark-string.png";
 import styles from "./index.module.scss";
 import Moon1 from "../../assets/moon3.png";
 import { THEME } from "../../constants";
@@ -13,10 +14,7 @@ type ThemeWidgetType = {
 const ThemeWidget = ({ userTheme }: ThemeWidgetType) => {
   const [theme, setTheme] = useState(userTheme);
 
-  const handleChangeTheme = (
-    theme: THEME,
-    e: React.MouseEvent<HTMLDivElement, MouseEvent>
-  ) => {
+  const handleChangeTheme = (theme: THEME) => {
     if (theme === THEME.DARK) {
       document.documentElement.setAttribute("data-theme", "light");
       setTheme(THEME.LIGHT);
@@ -41,10 +39,13 @@ const ThemeWidget = ({ userTheme }: ThemeWidgetType) => {
           </div>
         </div>
         <div className={styles.iconGroup} id="icon-group">
-          <img className={styles.rope} src={Rope} />
+          <img
+            className={styles.rope}
+            src={theme === THEME.DARK ? Rope : LightRope}
+          />
           <img
             className={styles.icon}
-            onClick={(e) => handleChangeTheme(theme, e)}
+            onClick={() => handleChangeTheme(theme)}
             src={theme === THEME.LIGHT ? Sun : Moon1}
           />
         </div>
