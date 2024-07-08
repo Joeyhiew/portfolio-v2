@@ -1,5 +1,12 @@
 import Astronaut from "../../assets/astronaut.gif";
+import type { GetProps } from "antd";
+import Icon from "@ant-design/icons";
+import { ReactComponent as GithubSVG } from "../../assets/github-svg.svg";
+import { ReactComponent as LinkedinSVG } from "../../assets/linkedin-svg.svg";
+import { ReactComponent as MailSVG } from "../../assets/mail.svg";
 import styles from "./index.module.scss";
+
+type CustomIconComponentProps = GetProps<typeof Icon>;
 
 const AboutPage = () => {
   return (
@@ -12,7 +19,17 @@ const AboutPage = () => {
           I'm a software developer from Singapore. I dabble in all things
           frontend. I like painting, hiking, and sleeping
         </div>
-        <button className={styles.button}>Let's connect</button>
+        <div className={styles.buttonGroup}>
+          <button className={styles.connectButton}>
+            <div className={styles.connectContent}>
+              Let's connect
+              <div className={styles.arrow}></div>
+            </div>
+          </button>
+          <GithubSVG className={styles.socialIcon} />
+          <LinkedinSVG className={styles.socialIcon} />
+          <MailSVG className={styles.socialIcon} />
+        </div>
       </div>
     </div>
   );
