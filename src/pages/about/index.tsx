@@ -1,14 +1,18 @@
+import { useState } from "react";
 import Astronaut from "../../assets/astronaut.gif";
-import type { GetProps } from "antd";
-import Icon from "@ant-design/icons";
 import { ReactComponent as GithubSVG } from "../../assets/github-svg.svg";
 import { ReactComponent as LinkedinSVG } from "../../assets/linkedin-svg.svg";
 import { ReactComponent as MailSVG } from "../../assets/mail.svg";
+import cx from "classnames";
 import styles from "./index.module.scss";
 
-type CustomIconComponentProps = GetProps<typeof Icon>;
-
 const AboutPage = () => {
+  const [displayIcons, setDisplayIcons] = useState(false);
+
+  const handleConnectClick = () => {
+    setDisplayIcons(!displayIcons);
+  };
+
   return (
     <div className={styles.container}>
       <img src={Astronaut} className={styles.gif} />
@@ -20,15 +24,33 @@ const AboutPage = () => {
           frontend. I like painting, hiking, and sleeping
         </div>
         <div className={styles.buttonGroup}>
-          <button className={styles.connectButton}>
+          <button
+            className={styles.connectButton}
+            onClick={() => handleConnectClick()}
+          >
             <div className={styles.connectContent}>
               Let's connect
               <div className={styles.arrow}></div>
             </div>
           </button>
-          <GithubSVG className={styles.socialIcon} />
-          <LinkedinSVG className={styles.socialIcon} />
-          <MailSVG className={styles.socialIcon} />
+          <GithubSVG
+            className={cx(
+              styles.socialIcon,
+              displayIcons ? styles.iconDisplay : ""
+            )}
+          />
+          <LinkedinSVG
+            className={cx(
+              styles.socialIcon,
+              displayIcons ? styles.iconDisplay : ""
+            )}
+          />
+          <MailSVG
+            className={cx(
+              styles.socialIcon,
+              displayIcons ? styles.iconDisplay : ""
+            )}
+          />
         </div>
       </div>
     </div>

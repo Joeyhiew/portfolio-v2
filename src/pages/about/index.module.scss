@@ -2,33 +2,6 @@
   position: relative;
 }
 
-.buttonGroup {
-  position: relative;
-  width: fit-content;
-  transition: 1200ms cubic-bezier(0.65, 0, 0.0745, 0.715);
-  &:hover {
-    width: 300px;
-  }
-}
-
-.connectButton {
-  z-index: 1;
-  position: relative;
-  background-color: var(--button-bg-primary);
-  height: 5.25vh;
-  width: 180px;
-  border-radius: 24px;
-  border: 1px white;
-  color: white;
-
-  transition: 300ms;
-  cursor: pointer;
-  &:hover {
-    background-color: var(--button-bg-hover);
-    width: 200px;
-  }
-}
-
 .connectContent {
   display: flex;
   justify-content: center;
@@ -46,103 +19,52 @@
   top: 8px;
 }
 
-.socialIcon {
-  position: absolute;
-  left: 50px;
-  top: 8px;
-  background-color: var(--icon-bg);
-  border-radius: 50%;
-  transition: 1200ms cubic-bezier(0.65, 0, 0.0745, 0.715);
-  path {
-    fill: var(--text-primary);
-  }
-  &:nth-child(2) {
-    left: 94px;
-  }
-
-  &:nth-child(3) {
-    left: 138px;
-  }
-}
-
-.arrow {
-  // display: none;
-  float: left;
-  cursor: pointer;
-}
-
-.arrow:before {
-  content: "";
-  height: 3px;
-  width: 20px;
-  background-color: #fff;
-  display: block;
-  float: left;
-  position: relative;
-  top: 3px;
-  left: 8px;
-  transition: 0.2s ease-in-out;
-}
-
-.arrow:after {
-  content: "";
-  float: left;
-  // border-left: 11px solid #fff;
-  // border-right: 11px solid transparent;
-  // border-top: 11px solid transparent;
-  // border-bottom: 11px solid transparent;
-  border: solid #fff;
-  border-width: 0 3px 3px 0;
-  /*   display: inline-block; */
-  padding: 3px;
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-}
-
-.connectButton:hover > .connectContent > .arrow {
-  display: inline-block;
-}
-
-.connectButton:hover > .connectContent > .arrow:before {
-  transition: 1000ms;
-  width: 40px;
-}
-
-.buttonGroup:hover > .socialIcon {
-  left: 206px;
-}
-
-.buttonGroup:hover > .socialIcon:nth-child(2) {
-  left: 250px;
-}
-
-.buttonGroup:hover > .socialIcon:nth-child(3) {
-  left: 294px;
-}
-
-.arrow:hover:before {
-  width: 40px;
-}
-
-@keyframes slideOut {
-  0% {
-    left: 0px;
-  }
-  50% {
-    left: 180px;
-  }
-  75% {
-    left: 210px;
-  }
-  90% {
-    left: 230px;
-  }
-  100% {
-    left: 240px;
-  }
-}
-
 @media screen and (max-width: 768px) {
+  .buttonGroup {
+    position: relative;
+    width: fit-content;
+    transition: 1200ms cubic-bezier(0.65, 0, 0.0745, 0.715);
+  }
+
+  .connectButton {
+    z-index: 1;
+    position: relative;
+    background-color: var(--button-bg-primary);
+    height: 5.25vh;
+    width: 180px;
+    border-radius: 24px;
+    border: 1px white;
+    color: white;
+
+    transition: 300ms;
+    cursor: pointer;
+  }
+
+  .socialIcon {
+    position: absolute;
+    left: 70px;
+    top: 8px;
+    background-color: var(--icon-bg);
+    border-radius: 50%;
+    transition: 1200ms cubic-bezier(0.65, 0, 0.0745, 0.715);
+    path {
+      fill: var(--text-primary);
+    }
+  }
+
+  .iconDisplay {
+    left: 24px;
+    top: 60px;
+  }
+  .iconDisplay:nth-child(2) {
+    left: 72px;
+    top: 60px;
+  }
+  .iconDisplay:nth-child(3) {
+    left: 120px;
+    top: 60px;
+  }
+
   .gif {
     position: absolute;
     width: 9vh;
@@ -168,9 +90,33 @@
       font-size: 2vh;
     }
   }
+
+  .arrow {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 768px) {
+  .buttonGroup {
+    position: relative;
+    width: fit-content;
+    transition: 1200ms cubic-bezier(0.65, 0, 0.0745, 0.715);
+  }
+
+  .connectButton {
+    z-index: 1;
+    position: relative;
+    background-color: var(--button-bg-primary);
+    height: 5.25vh;
+    width: 180px;
+    border-radius: 24px;
+    border: 1px white;
+    color: white;
+
+    transition: 300ms;
+    cursor: pointer;
+  }
+
   .gif {
     position: absolute;
     width: 10vw;
@@ -195,5 +141,77 @@
     .header3 {
       font-size: 2vh;
     }
+  }
+
+  .socialIcon {
+    position: absolute;
+    left: 50px;
+    top: 8px;
+    background-color: var(--icon-bg);
+    border-radius: 50%;
+    transition: 1200ms cubic-bezier(0.65, 0, 0.0745, 0.715);
+    path {
+      fill: var(--text-primary);
+    }
+    &:nth-child(2) {
+      left: 94px;
+    }
+
+    &:nth-child(3) {
+      left: 138px;
+    }
+  }
+
+  .arrow {
+    float: left;
+    cursor: pointer;
+  }
+
+  .arrow:before {
+    content: "";
+    height: 3px;
+    width: 20px;
+    background-color: #fff;
+    display: block;
+    float: left;
+    position: relative;
+    top: 3px;
+    left: 8px;
+    transition: 0.2s ease-in-out;
+  }
+
+  .arrow:after {
+    content: "";
+    float: left;
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    padding: 3px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+
+  .connectButton:hover > .connectContent > .arrow {
+    display: inline-block;
+  }
+
+  .connectButton:hover > .connectContent > .arrow:before {
+    transition: 1000ms;
+    width: 40px;
+  }
+
+  .buttonGroup:hover > .socialIcon {
+    left: 206px;
+  }
+
+  .buttonGroup:hover > .socialIcon:nth-child(2) {
+    left: 250px;
+  }
+
+  .buttonGroup:hover > .socialIcon:nth-child(3) {
+    left: 294px;
+  }
+
+  .arrow:hover:before {
+    width: 40px;
   }
 }
