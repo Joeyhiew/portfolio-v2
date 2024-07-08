@@ -42,7 +42,7 @@ const Navbar = () => {
           onClick={() => handleMenuToggle()}
           className={cx(styles.icon, isMenuOpen ? styles.open : "")}
         />
-        <img src={Astronaut} className={styles.gif} />
+        <Avatar src={Profile} className={styles.avatar} />
         <ul className={styles.navList}>
           <li className={styles.navItem}>
             <NavLink to="/" className="nav-link">

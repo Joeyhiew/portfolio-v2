@@ -24,15 +24,6 @@ const AboutPage = () => {
           frontend. I like painting, hiking, and sleeping
         </div>
         <div className={styles.buttonGroup}>
-          <button
-            className={styles.connectButton}
-            onClick={() => handleConnectClick()}
-          >
-            <div className={styles.connectContent}>
-              Let's connect
-              <div className={styles.arrow}></div>
-            </div>
-          </button>
           <GithubSVG
             className={cx(
               styles.socialIcon,
@@ -51,6 +42,15 @@ const AboutPage = () => {
               displayIcons ? styles.iconDisplay : ""
             )}
           />
+          <button
+            className={styles.connectButton}
+            onClick={() => handleConnectClick()}
+          >
+            <div className={styles.connectContent}>
+              Let's connect
+              <div className={styles.arrow}></div>
+            </div>
+          </button>
         </div>
       </div>
     </div>

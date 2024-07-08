@@ -25,10 +25,9 @@
     left: -100vw;
     display: flex;
     flex-direction: column;
-    width: 60%;
-    background-color: grey;
+    width: 60vw;
+    background-color: var(--navbar-bg);
     transition: all 0.5s ease;
-    opacity: 0.9;
   }
 
   .sideBar.open {
@@ -37,12 +36,12 @@
 
   .icon {
     position: absolute;
-    top: 1vw;
+    top: 2vw;
     left: -100vw;
     transition: all 0.5s ease;
   }
   .icon.open {
-    left: 1vw;
+    left: 2vw;
   }
 
   .navList {
@@ -63,7 +62,7 @@
     padding-bottom: 2vw;
     border-radius: 4px;
     &:hover {
-      background-color: black;
+      background-color: var(--navbar-hover);
     }
   }
 
@@ -75,6 +74,14 @@
 
   .gif {
     width: 18vw;
+    align-self: center;
+    margin-top: 16vw;
+    margin-bottom: 4vw;
+  }
+
+  .avatar {
+    width: 18vw;
+    height: 18vw;
     align-self: center;
     margin-top: 16vw;
     margin-bottom: 4vw;
