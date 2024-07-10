@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import { Avatar } from "antd";
 import { IoClose, IoMenu } from "react-icons/io5";
 import Profile from "../../assets/profile.jpg";
-import Astronaut from "../../assets/astronaut.gif";
 import { useMediaQuery } from "react-responsive";
 import cx from "classnames";
 import styles from "./index.module.scss";
@@ -11,24 +11,41 @@ import styles from "./index.module.scss";
 const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState<boolean>(false);
   const isMobile = useMediaQuery({ maxWidth: "768px" });
+  const menuRef = useRef<HTMLDivElement | null>(null);
 
   const handleMenuToggle = () => {
     setMenuOpen(!isMenuOpen);
   };
+
+  const handleOutsideClick = (event: MouseEvent) => {
+    if (
+      isMenuOpen &&
+      !menuRef?.current?.contains(event.target as HTMLDivElement)
+    ) {
+      setMenuOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, [isMenuOpen]);
 
   const renderPCNavlink = () => (
     <div className={styles.navMenuWrapper}>
       <Avatar src={Profile} className={styles.avatar} />
       <ul className={styles.navList}>
         <li className={styles.navItem}>
-          <NavLink to="/" className="nav-link">
+          <HashLink to="#about" smooth className="nav-link">
             About
-          </NavLink>
+          </HashLink>
         </li>
         <li className={styles.navItem}>
-          <NavLink to="/projects" className="nav-link">
+          <HashLink to="#projects" smooth className="nav-link">
             Projects
-          </NavLink>
+          </HashLink>
         </li>
       </ul>
     </div>
@@ -37,7 +54,10 @@ const Navbar = () => {
   const renderMobileNavLinks = () => (
     <div className={styles.navMenuWrapper} id="nav-menu">
       <IoMenu onClick={() => handleMenuToggle()} />
-      <div className={cx(styles.sideBar, isMenuOpen ? styles.open : "")}>
+      <div
+        className={cx(styles.sideBar, isMenuOpen ? styles.open : "")}
+        ref={menuRef}
+      >
         <IoClose
           onClick={() => handleMenuToggle()}
           className={cx(styles.icon, isMenuOpen ? styles.open : "")}
@@ -45,14 +65,14 @@ const Navbar = () => {
         <Avatar src={Profile} className={styles.avatar} />
         <ul className={styles.navList}>
           <li className={styles.navItem}>
-            <NavLink to="/" className="nav-link">
+            <HashLink to="#about" smooth className="nav-link">
               About
-            </NavLink>
+            </HashLink>
           </li>
           <li className={styles.navItem}>
-            <NavLink to="/projects" className="nav-link">
+            <HashLink to="#projects" smooth className="nav-link">
               Projects
-            </NavLink>
+            </HashLink>
           </li>
         </ul>
       </div>
@@ -60,7 +80,7 @@ const Navbar = () => {
   );
 
   return (
-    <header className={styles.header}>
+    <header className={styles.header} id="about">
       <nav className="nav container">
         {isMobile ? (
           <div className={styles.navToggle} id="nav-toggle">

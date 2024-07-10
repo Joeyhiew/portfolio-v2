@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  background-color: var(--bg-secondary-1);
+  text-align: center;
+  align-items: center;
+  transition: 1000ms;
+}
+
+.wip {
+  width: 20vw;
+  margin-top: 5vh;
+}
+
+.text {
+  color: var(--text-primary);
+}

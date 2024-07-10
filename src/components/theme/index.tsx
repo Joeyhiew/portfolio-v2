@@ -1,10 +1,10 @@
-import { useState } from "react";
 import Sun from "../../assets/sun.png";
 import Rope from "../../assets/string.png";
 import LightRope from "../../assets/dark-string.png";
 import styles from "./index.module.scss";
 import Moon1 from "../../assets/moon3.png";
 import { THEME } from "../../constants";
+import { useTheme } from "./theme-provider";
 import cx from "classnames";
 
 type ThemeWidgetType = {
@@ -12,15 +12,15 @@ type ThemeWidgetType = {
 };
 
 const ThemeWidget = ({ userTheme }: ThemeWidgetType) => {
-  const [theme, setTheme] = useState(userTheme);
+  const { theme, toggleTheme } = useTheme();
 
   const handleChangeTheme = (theme: THEME) => {
     if (theme === THEME.DARK) {
       document.documentElement.setAttribute("data-theme", "light");
-      setTheme(THEME.LIGHT);
+      toggleTheme(THEME.LIGHT);
     } else {
       document.documentElement.setAttribute("data-theme", "dark");
-      setTheme(THEME.DARK);
+      toggleTheme(THEME.DARK);
     }
   };
 
