@@ -21,3 +21,50 @@
 .text {
   color: var(--text-primary);
 }
+
+// .waveDisplay {
+//   // display: block;
+//   transition: opacity 1s ease-out;
+//   // display: none;
+//   transition: 1000ms;
+//   opacity: 1;
+//   transition: 1000ms;
+//   height: auto;
+// }
+
+// .waveClose {
+//   opacity: 0;
+//   transition: opacity 1s ease-out;
+//   // display: none;
+//   transition: 1000ms;
+//   height: 0;
+// }
+
+.waveLight {
+  transition: all 1000ms;
+  defs {
+    linearGradient {
+      stop:nth-child(1) {
+        stop-color: rgba(106, 105, 154, 1);
+      }
+      stop:nth-child(2) {
+        stop-color: rgba(223, 195, 255, 1);
+      }
+    }
+  }
+}
+
+.waveDark {
+  transition: all 1000ms;
+
+  defs {
+    linearGradient {
+      stop:nth-child(1) {
+        stop-color: rgba(43, 37, 54, 1);
+      }
+      stop:nth-child(2) {
+        stop-color: rgba(100, 98, 165, 1);
+      }
+    }
+  }
+}
